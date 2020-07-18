@@ -1,0 +1,33 @@
+Lua 5.1.4  Copyright (C) 1994-2008 Lua.org, PUC-Rio
+
+main <./table.lua:0,0> (29 instructions, 116 bytes at 0x1f4a530)
+0+ params, 9 slots, 0 upvalues, 5 locals, 16 constants, 0 functions
+	1	[1]	NEWTABLE 	0 8 0
+	2	[1]	LOADK    	1 -2	; 123
+	3	[1]	LOADK    	2 -3	; 12.44
+	4	[1]	NEWTABLE 	3 2 0
+	5	[1]	LOADK    	4 -4	; 1
+	6	[1]	LOADK    	5 -5	; 2
+	7	[1]	SETLIST  	3 2 1	; 1
+	8	[1]	LOADK    	4 -6	; "hello"
+	9	[1]	LOADK    	5 -7	; "this"
+	10	[1]	LOADK    	6 -8	; "is"
+	11	[1]	LOADK    	7 -9	; "SunWu"
+	12	[1]	LOADK    	8 -10	; "five"
+	13	[1]	SETLIST  	0 8 1	; 1
+	14	[1]	SETGLOBAL	0 -1	; mytable
+	15	[2]	GETGLOBAL	0 -1	; mytable
+	16	[2]	SETTABLE 	0 -11 -12	; 8 "world"
+	17	[3]	GETGLOBAL	0 -1	; mytable
+	18	[3]	SETTABLE 	0 -13 -14	; "wow" "key"
+	19	[4]	GETGLOBAL	0 -15	; ipairs
+	20	[4]	GETGLOBAL	1 -1	; mytable
+	21	[4]	CALL     	0 2 4
+	22	[4]	JMP      	4	; to 27
+	23	[5]	GETGLOBAL	5 -16	; print
+	24	[5]	MOVE     	6 3
+	25	[5]	MOVE     	7 4
+	26	[5]	CALL     	5 3 1
+	27	[4]	TFORLOOP 	0 2
+	28	[5]	JMP      	-6	; to 23
+	29	[6]	RETURN   	0 1
