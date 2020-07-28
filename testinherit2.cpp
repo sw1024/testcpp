@@ -12,6 +12,9 @@ class N
 			std::cout<<"call common construct"<<std::endl;
 		}
 
+		static bool IsTrue() { return true;};
+		virtual void print() { std::cout<<"N"<<std::endl;}
+
 	private:
 		long m_a;
 		long m_b;
@@ -27,6 +30,8 @@ class A : virtual public N
 		{
 		}
 
+		static bool IsTrue() { return true;};
+		virtual void print() { std::cout<<"A"<<std::endl;}
 	private:
 		long a_1;
 
@@ -40,6 +45,9 @@ class B : virtual public N
 			,b_1(2)
 		{
 		}
+
+		//static bool IsTrue() { return false;}
+		virtual void print() { std::cout<<"B"<<std::endl;}
 
 	private:
 		long b_1;
@@ -57,6 +65,8 @@ class C : public A, public B
 		{
 		}
 
+		virtual void print() { std::cout<<"C"<<std::endl;}
+
 
 
 		long c_1;
@@ -68,4 +78,13 @@ int main()
 	std::cout<<"A: "<<sizeof(A)<<std::endl;
 	std::cout<<"B: "<<sizeof(B)<<std::endl;
 	std::cout<<"C: "<<sizeof(C)<<std::endl;
+
+	N* o = (N*)new A();
+
+	std::cout<<N::IsTrue()<<std::endl;
+	std::cout<<A::IsTrue()<<std::endl;
+	std::cout<<B::IsTrue()<<std::endl;
+	std::cout<<o->IsTrue()<<std::endl;
+
+	o->print();
 }
